@@ -4,6 +4,22 @@
 var rodada = 1;
 var matriz_jogo = Array(3);
 
+matriz_jogo['a'] = Array(3);
+matriz_jogo['b'] = Array(3);
+matriz_jogo['c'] = Array(3);
+
+matriz_jogo['a'][1] = 0;
+matriz_jogo['a'][2] = 0;
+matriz_jogo['a'][3] = 0;
+
+matriz_jogo['b'][1] = 0;
+matriz_jogo['b'][2] = 0;
+matriz_jogo['b'][3] = 0;
+
+matriz_jogo['c'][1] = 0;
+matriz_jogo['c'][2] = 0;
+matriz_jogo['c'][3] = 0;
+
 //Espera o DOM carregar para iniciar função
 $(document).ready(function () {
 
@@ -50,5 +66,15 @@ $(document).ready(function () {
         rodada++;
 
         $('#'+id).css('background-image', icone);
+
+        var linha_coluna = id.split('-');
+
+        //alert(linha_coluna[0]);
+        //alert(linha_coluna[1]);
+        matriz_jogo[linha_coluna[0]][linha_coluna[1]] = ponto;
+
+        //console.log(matriz_jogo);
+        varifica_combinacao();
     }
+
 });
