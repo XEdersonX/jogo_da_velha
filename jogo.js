@@ -77,4 +77,16 @@ $(document).ready(function () {
         varifica_combinacao();
     }
 
+    function varifica_combinacao() {
+
+        //Verifica na horizontal
+        var pontos = 0;
+        for(var i = 1; i <= 3; i++){
+            pontos = matriz_jogo['a'][i]
+        }
+
+        //alert(pontos);
+    }
+
+
 });
