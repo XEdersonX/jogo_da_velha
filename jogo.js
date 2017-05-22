@@ -83,7 +83,7 @@ $(document).ready(function () {
         //Verifica na horizontal
         var pontos = 0;
         for(var i = 1; i <= 3; i++){
-            pontos = matriz_jogo['a'][i]
+            pontos = matriz_jogo['a'][i];
         }
 
         //alert(pontos);
@@ -91,13 +91,13 @@ $(document).ready(function () {
 
         var pontos = 0;
         for(var i = 1; i <= 3; i++){
-            pontos = matriz_jogo['b'][i]
+            pontos = matriz_jogo['b'][i];
         }
         ganhador(pontos);
 
         var pontos = 0;
         for(var i = 1; i <= 3; i++){
-            pontos = matriz_jogo['c'][i]
+            pontos = matriz_jogo['c'][i];
         }
         ganhador(pontos);
 
