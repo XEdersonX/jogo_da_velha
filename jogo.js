@@ -1,6 +1,9 @@
 /**
  * Created by edersonluispereiragoncalves on 22/05/17.
  */
+var rodada = 1;
+var matriz_jogo = Array(3);
+
 //Espera o DOM carregar para iniciar função
 $(document).ready(function () {
 
@@ -17,7 +20,35 @@ $(document).ready(function () {
             return false;
         }
 
-        alert($('#entrada_apelido_jogador_1').val());
-        alert($('#entrada_apelido_jogador_2').val());
+        //Exibir os apelidos
+        $('#jogador_1').html($('#entrada_apelido_jogador_1').val());
+        $('#jogador_2').html($('#entrada_apelido_jogador_2').val());
+
+        //Controla visualização das divs.
+        $('#pagina_inicial').hide();
+        $('#palco_jogo').show();
     });
+    
+    $('.jogada').click(function () {
+
+        var id_campo_clicado = this.id;
+        jogada(id_campo_clicado);
+    });
+
+    function jogada(id) {
+        var icone = '';
+        var ponto = 0;
+
+        if ((rodada % 2) == 1){
+            icone = 'url("imagens/marcacao_1.png")';
+            ponto = -1;
+        }else {
+            icone = 'url("imagens/marcacao_2.png")';
+            ponto = 1;
+        }
+
+        rodada++;
+
+        $('#'+id).css('background-image', icone);
+    }
 });
